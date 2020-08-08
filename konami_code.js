@@ -13,7 +13,20 @@ const codes = [
 
 function init() {
   // your code here
- document.body.addEventListener('keydown', (event) => {
-   
- }
+ let index = 0;
+
+  document.body.addEventListener("keydown", function(e) {
+    const key = e.key;
+
+    if (codes[index] === key) {
+      index++;
+
+      if (index === codes.length) {
+        alert("Hurray!");
+        index = 0;
+      }
+    } else {
+      index = 0;
+    }
+  });
 }
